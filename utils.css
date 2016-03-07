@@ -1,0 +1,33 @@
+/*
+ * apply unviersal box-sizing;
+ * given width of an element should contain its border and padding 
+ */
+*, 
+*:before, 
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+
+/*
+ * make text unselectable
+ */
+.make-text-unselectable {
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;      
+}
+
+/*
+ * clear floats
+ */
+.clrflt:after {
+  content:'';
+  display:block;
+  clear:both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
