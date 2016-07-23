@@ -3,6 +3,18 @@
   'use strict';
 
   var utils = {};
+
+  /* return query string as json object */
+  utils.getQueryString = function(key) {
+    var data   = [];
+    var params = {};
+    var urlParams = window.location.search && window.location.search.substr(1).split('&');
+    for(var i=0;i<urlParams.length;i++) {
+      data = urlParams[i].split('=');
+      params[ data[0] ] = window.decodeURIComponent(data[1]);
+    }
+    return typeof key !== "undefined" ? params[key] : params;
+  };
   
   /* detect if device is mobile */
   utils.isMobile = {
